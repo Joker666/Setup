@@ -14,3 +14,4 @@ Setup tools for a new machine.
   - Usage: `br -S`
 - [walk](https://github.com/antonmedv/walk)
   - Usage: `lk`
+- [starship](https://github.com/starship/starship)
