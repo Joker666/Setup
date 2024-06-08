@@ -8,6 +8,10 @@ Setup tools for a new machine.
 
 > Use the .pkg installer for Mac OS X
 
+```bash
+brew doctor
+```
+
 ## Command line tools
 
 - [superfile](https://github.com/yorukot/superfile)
@@ -37,6 +41,10 @@ Setup tools for a new machine.
 - [mise](https://mise.jdx.dev/)
 
 > Use Homebrew to install Mise.
+
+```bash
+mise doctor
+```
 
 # Programming languages
 
