@@ -16,3 +16,7 @@ Setup tools for a new machine.
 - [walk](https://github.com/antonmedv/walk)
   - Usage: `lk`
 - [starship](https://github.com/starship/starship)
+
+## Install fish shell
+
+- [Instructions on how to install Fish shell on Mac OS X, including Oh My Fish!](https://gist.github.com/martelogan/97cfc998ade51b6dcf55423bbd50917c)
