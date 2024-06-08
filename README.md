@@ -59,3 +59,8 @@ Use `rustup` to install Rust.
 ## Python
 
 - [Use Mise to install python](https://mise.jdx.dev/lang/python.html)
+
+## Node
+
+- [Use fnm to install node](https://github.com/Schniz/fnm)
+- [Use corepack to install pnpm](https://pnpm.io/installation#using-corepack)
