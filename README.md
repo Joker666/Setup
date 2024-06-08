@@ -60,6 +60,10 @@ Use `rustup` to install Rust.
 
 - [Use Mise to install python](https://mise.jdx.dev/lang/python.html)
 
+## Ruby
+
+- [Use Mise to install ruby](https://mise.jdx.dev/lang/ruby.html)
+
 ## Node
 
 - [Use fnm to install node](https://github.com/Schniz/fnm)
