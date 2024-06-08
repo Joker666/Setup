@@ -9,6 +9,7 @@ Setup tools for a new machine.
   - Usage: `ks`
 - [bat](https://github.com/sharkdp/bat)
 - [lazygit](https://github.com/jesseduffield/lazygit)
+  - Usage: `lg`
 - [lazydocker](https://github.com/jesseduffield/lazydocker)
 - [broot](https://github.com/Canop/broot)
   - Usage: `br -S`

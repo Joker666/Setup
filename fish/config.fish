@@ -11,6 +11,12 @@ starship init fish | source
 set -x GOPATH $HOME/go
 set -x PATH $PATH "$GOPATH/bin"
 
+# Rust
+set -x PATH $PATH "$HOME/.cargo/bin"
+
+# Flutter (if installed)
+set -x PATH $PATH "$HOME/flutter/bin"
+
 # walk plugin
 function lk
   set loc (walk $argv); and cd $loc;
