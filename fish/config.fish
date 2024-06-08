@@ -1,0 +1,5 @@
+alias gib="git branch"
+alias gic="git checkout"
+alias gst="git status"
+alias lg="lazygit"
+alias ks="eza -l --grid"
