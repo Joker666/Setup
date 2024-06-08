@@ -32,6 +32,12 @@ Setup tools for a new machine.
 - [Favorite fonts](https://gist.github.com/Joker666/344be44b6f397cba59645b205085bcd4)
 - [Hack nerd font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
 
+## Install mise version manager
+
+- [mise](https://mise.jdx.dev/)
+
+> Use Homebrew to install Mise.
+
 # Programming languages
 
 ## Go
@@ -41,3 +47,7 @@ Use Homebrew to install Go.
 ## Rust
 
 Use `rustup` to install Rust.
+
+## Python
+
+- [Use Mise to install python](https://mise.jdx.dev/lang/python.html)
