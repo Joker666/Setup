@@ -26,3 +26,8 @@ Setup tools for a new machine.
 ## Install fish shell
 
 - [Instructions on how to install Fish shell on Mac OS X, including Oh My Fish!](https://gist.github.com/martelogan/97cfc998ade51b6dcf55423bbd50917c)
+
+## Install fonts
+
+- [Favorite Fonts](https://gist.github.com/Joker666/344be44b6f397cba59645b205085bcd4)
+- [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
