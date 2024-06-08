@@ -29,5 +29,15 @@ Setup tools for a new machine.
 
 ## Install fonts
 
-- [Favorite Fonts](https://gist.github.com/Joker666/344be44b6f397cba59645b205085bcd4)
-- [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+- [Favorite fonts](https://gist.github.com/Joker666/344be44b6f397cba59645b205085bcd4)
+- [Hack nerd font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+
+# Programming languages
+
+## Go
+
+Use Homebrew to install Go.
+
+## Rust
+
+Use `rustup` to install Rust.
