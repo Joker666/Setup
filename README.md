@@ -63,4 +63,11 @@ Use `rustup` to install Rust.
 ## Node
 
 - [Use fnm to install node](https://github.com/Schniz/fnm)
+
+  > Use the automatic installtion script.
+
 - [Use corepack to install pnpm](https://pnpm.io/installation#using-corepack)
+
+```bash
+pnpm setup
+```
