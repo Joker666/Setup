@@ -2,6 +2,12 @@
 
 Setup tools for a new machine.
 
+## Install Homebrew
+
+- [Homebrew](https://brew.sh/)
+
+> Use the .pkg installer for Mac OS X
+
 ## Command line tools
 
 - [superfile](https://github.com/yorukot/superfile)
