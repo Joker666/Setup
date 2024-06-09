@@ -17,9 +17,6 @@ set -x PATH $PATH "$HOME/.cargo/bin"
 # Flutter (if installed)
 set -x PATH $PATH "$HOME/flutter/bin"
 
-# Node
-fnm env --use-on-cd --corepack-enabled --resolve-engines | source
-
 # walk plugin
 function lk
   set loc (walk $argv); and cd $loc;
