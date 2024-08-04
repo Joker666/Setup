@@ -33,6 +33,7 @@ config.font_size = 14.0
 config.window_close_confirmation = 'NeverPrompt'
 config.default_cursor_style = 'BlinkingBar'
 config.initial_cols = 100
+config.hide_tab_bar_if_only_one_tab = true
 
 -- and finally, return the configuration to wezterm
 return config
