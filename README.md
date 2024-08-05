@@ -26,6 +26,7 @@ brew doctor
 - [walk](https://github.com/antonmedv/walk)
   - Usage: `lk`
 - [starship](https://github.com/starship/starship)
+- [btop](https://github.com/aristocratos/btop)
 
 ## Install fish shell
 
