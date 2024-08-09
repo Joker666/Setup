@@ -41,7 +41,8 @@ brew doctor
 
 - [mise](https://mise.jdx.dev/)
 
-> Use Homebrew to install Mise.
+> Use Homebrew to install Mise in MacOS.
+> Use CLI to install Mise in Linux.
 
 ```bash
 mise doctor
@@ -51,7 +52,7 @@ mise doctor
 
 ## Go
 
-Use Homebrew to install Go.
+- [Use Mise to install go](https://mise.jdx.dev/lang/go.html)
 
 ## Rust
 
