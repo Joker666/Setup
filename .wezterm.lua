@@ -7,22 +7,22 @@ local config = {}
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
 if wezterm.config_builder then
-  config = wezterm.config_builder()
+    config = wezterm.config_builder()
 end
 
 function get_appearance()
-  if wezterm.gui then
-    return wezterm.gui.get_appearance()
-  end
-  return 'Dark'
+    if wezterm.gui then
+        return wezterm.gui.get_appearance()
+    end
+    return 'Dark'
 end
 
 function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then
-    return 'Batman'
-  else
-    return 'Papercolor Light (Gogh)'
-  end
+    if appearance:find 'Dark' then
+        return 'Batman'
+    else
+        return 'Papercolor Light (Gogh)'
+    end
 end
 
 -- This is where you actually apply your config choices
