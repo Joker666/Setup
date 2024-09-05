@@ -25,7 +25,7 @@ fish_add_path /opt/homebrew/bin
 ## Install fonts
 
 - [Favorite fonts](https://gist.github.com/Joker666/344be44b6f397cba59645b205085bcd4)
-- [Hack nerd font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+- [MartianMono nerd font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/MartianMono.zip)
 
 ## Install mise version manager
 
