@@ -68,7 +68,7 @@ pnpm setup
 ## Command line tools
 
 - [superfile](https://github.com/yorukot/superfile)
-- [exa](https://github.com/ogham/exa)
+- [eza](https://github.com/eza-community/eza)
   - Usage: `ks`
 - [bat](https://github.com/sharkdp/bat)
 - [lazygit](https://github.com/jesseduffield/lazygit)
