@@ -1,3 +1,4 @@
+# Alias
 alias gib="git branch"
 alias gic="git checkout"
 alias gst="git status"
@@ -17,7 +18,7 @@ set -x PATH $PATH "$HOME/.cargo/bin"
 # Flutter (if installed)
 set -x PATH $PATH "$HOME/flutter/bin"
 
-# walk plugin
+# walk plugin (if installed)
 function lk
   set loc (walk $argv); and cd $loc;
 end
