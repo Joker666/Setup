@@ -80,3 +80,11 @@ pnpm setup
   - Usage: `lk`
 - [starship](https://github.com/starship/starship)
 - [btop](https://github.com/aristocratos/btop)
+
+## Mac Apps
+
+- [IINA](https://iina.io)
+- [Klack](https://tryklack.com)
+- [Krisp](https://krisp.ai)
+- [Yaak](https://yaak.app)
+- [Stats](https://github.com/exelban/stats)
