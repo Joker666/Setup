@@ -3,7 +3,8 @@ alias gib="git branch"
 alias gic="git checkout"
 alias gst="git status"
 alias lg="lazygit"
-alias ks="eza -l --grid"
+alias ks="eza -l --grid --icons"
+alias ducks="du -ckhs ./* | sort -h"
 
 # Starfish
 starship init fish | source
