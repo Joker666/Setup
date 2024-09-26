@@ -88,3 +88,4 @@ pnpm setup
 - [Krisp](https://krisp.ai)
 - [Yaak](https://yaak.app)
 - [Stats](https://github.com/exelban/stats)
+- [ImageOptim](https://imageoptim.com)
