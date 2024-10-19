@@ -80,6 +80,7 @@ pnpm setup
   - Usage: `lk`
 - [starship](https://github.com/starship/starship)
 - [btop](https://github.com/aristocratos/btop)
+- [onefetch](https://github.com/o2sh/onefetch)
 
 ## Mac Apps
 
@@ -89,3 +90,4 @@ pnpm setup
 - [Yaak](https://yaak.app)
 - [Stats](https://github.com/exelban/stats)
 - [ImageOptim](https://imageoptim.com)
+- [DaisyDisk](https://daisydiskapp.com)
