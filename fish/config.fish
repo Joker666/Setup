@@ -5,6 +5,7 @@ alias gst="git status"
 alias lg="lazygit"
 alias ks="eza -l --grid --icons"
 alias ducks="du -ckhs ./* | sort -h"
+alias showpath="echo $PATH | tr ':' '\n' | nl"
 
 # Starfish
 starship init fish | source
