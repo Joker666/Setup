@@ -28,7 +28,7 @@ end
 -- This is where you actually apply your config choices
 
 config.color_scheme = scheme_for_appearance(get_appearance())
-config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
+config.font = wezterm.font('JetBrainsMono Nerd Font Mono', { weight = 'Bold' })
 config.font_size = 14.0
 config.window_close_confirmation = 'NeverPrompt'
 config.default_cursor_style = 'BlinkingBar'
