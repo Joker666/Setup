@@ -10,9 +10,6 @@ alias showpath="echo $PATH | tr ':' '\n' | nl"
 # Starfish
 starship init fish | source
 
-# Mise shims
-set -gx PATH $HOME/.local/share/mise/shims $PATH
-
 # Go
 set -x GOPATH $HOME/go
 set -x PATH $PATH "$GOPATH/bin"
