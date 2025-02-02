@@ -91,3 +91,4 @@ pnpm setup
 - [Stats](https://github.com/exelban/stats)
 - [ImageOptim](https://imageoptim.com)
 - [DaisyDisk](https://daisydiskapp.com)
+- [LM Studio](https://lmstudio.ai/)
