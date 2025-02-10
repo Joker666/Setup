@@ -62,6 +62,7 @@ Use `rustup` to install Rust.
 - [Use corepack to install pnpm](https://pnpm.io/installation#using-corepack)
 
 ```bash
+corepack prepare --activate
 pnpm setup
 ```
 
