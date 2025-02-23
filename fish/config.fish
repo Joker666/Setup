@@ -10,6 +10,9 @@ alias showpath="echo $PATH | tr ':' '\n' | nl"
 # Starfish
 starship init fish | source
 
+# Set up fzf key bindings
+fzf --fish | source
+
 # Go
 set -x GOPATH $HOME/go
 set -x PATH $PATH "$GOPATH/bin"
