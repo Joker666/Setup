@@ -72,6 +72,7 @@ pnpm setup
 - [eza](https://github.com/eza-community/eza)
   - Usage: `ks`
 - [bat](https://github.com/sharkdp/bat)
+- [fzf](https://junegunn.github.io/fzf/)
 - [lazygit](https://github.com/jesseduffield/lazygit)
   - Usage: `lg`
 - [lazydocker](https://github.com/jesseduffield/lazydocker)
@@ -82,6 +83,7 @@ pnpm setup
 - [starship](https://github.com/starship/starship)
 - [btop](https://github.com/aristocratos/btop)
 - [onefetch](https://github.com/o2sh/onefetch)
+- [fastfetch](https://github.com/fastfetch-cli/fastfetch)
 
 ## Mac Apps
 
@@ -93,3 +95,4 @@ pnpm setup
 - [ImageOptim](https://imageoptim.com)
 - [DaisyDisk](https://daisydiskapp.com)
 - [LM Studio](https://lmstudio.ai/)
+- [PearCleaner](https://itsalin.com/appInfo/?id=pearcleaner)
