@@ -10,6 +10,9 @@ alias showpath="echo $PATH | tr ':' '\n' | nl"
 # Starfish
 starship init fish | source
 
+# Sublime
+set -x PATH $PATH "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+
 # Set up fzf key bindings
 fzf --fish | source
 
