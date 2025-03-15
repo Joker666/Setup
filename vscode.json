@@ -1,0 +1,173 @@
+{
+  "window.commandCenter": true,
+  "window.autoDetectColorScheme": true,
+  "explorer.autoReveal": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.tree.indent": 15,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.list.smoothScrolling": true,
+  "workbench.list.horizontalScrolling": true,
+  "workbench.tree.enableStickyScroll": true,
+  "workbench.preferredLightColorTheme": "Vitesse Light",
+  "workbench.preferredDarkColorTheme": "Vitesse Dark Soft",
+  "workbench.colorCustomizations": {
+    "[Default Light Modern]": {
+      "editor.lineHighlightBackground": "#f5f9ff",
+      "editor.lineHighlightBorder": "#f1f7ff"
+    },
+    "[Default Dark Modern]": {
+      "editor.lineHighlightBackground": "#2b2b2b",
+      "editor.lineHighlightBorder": "#2b2b2b",
+      "editorBracketHighlight.foreground1": "#1093ff",
+      "editorBracketHighlight.foreground2": "#1093ff",
+      "editorBracketHighlight.foreground3": "#1093ff",
+      "editorBracketHighlight.foreground4": "#1093ff",
+      "editorBracketHighlight.foreground5": "#1093ff",
+      "editorBracketHighlight.foreground6": "#1093ff",
+      "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"
+    }
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "file:/**/*.csv": "jupyter-data-wrangler"
+  },
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "editor.rulers": [120],
+  "editor.codeLens": true,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "editor.smoothScrolling": true,
+  "editor.renderLineHighlight": "all",
+  "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.maxLineCount": 1,
+  "editor.inlineSuggest.enabled": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.accessibilitySupport": "off",
+  "editor.foldingImportsByDefault": true,
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.guides.bracketPairs": "active",
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.fontFamily": "IBM Plex Mono, JetBrains Mono, Menlo, Monaco, monospace",
+  "editor.fontSize": 15,
+  "editor.fontWeight": "500",
+  "editor.lineHeight": 27,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "outline.collapseItems": "alwaysCollapse",
+  "debug.toolBarLocation": "commandCenter",
+  "files.autoSave": "onFocusChange",
+  "files.autoSaveWhenNoErrors": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "settingsSync.ignoredSettings": [
+    "window.titleBarStyle",
+    "editor.fontSize",
+    "editor.fontWeight",
+    "editor.fontFamily",
+    "editor.lineHeight",
+    "editor.minimap.enabled",
+    "editor.mouseWheelScrollSensitivity",
+    "workbench.colorTheme",
+    "workbench.preferredDarkColorTheme",
+    "workbench.preferredLightColorTheme",
+    "lldb.library"
+  ],
+  "settingsSync.ignoredExtensions": ["sourcegraph.cody-ai"],
+  "go.formatTool": "gofumpt",
+  "gopls": {
+    "ui.semanticTokens": false,
+    "formatting.gofumpt": true
+  },
+  "go.useLanguageServer": true,
+  "go.toolsManagement.autoUpdate": true,
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[javascript][typescript][html][javascriptreact][typescriptreact][jsonc][astro][css]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "rust-analyzer.check.command": "clippy",
+  "python.languageServer": "Pylance",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[kotlin]": {
+    "editor.semanticHighlighting.enabled": false
+  },
+  "rubyLsp.rubyVersionManager": {
+    "identifier": "mise",
+    "miseExecutablePath": "/opt/homebrew/bin/mise"
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [120],
+    "editor.semanticHighlighting.enabled": true
+  },
+  "[dart]": {
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[mdx]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "notebook.lineNumbers": "on",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.markup.fontSize": 12,
+  "notebook.output.fontSize": 12,
+  "notebook.output.lineHeight": 14,
+  "git.enableSmartCommit": true,
+  "redhat.telemetry.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "terminal.integrated.env.osx": {},
+  "terminal.integrated.env.linux": {},
+  "lldb.launch.expressions": "native",
+  "cmake.configureOnOpen": true,
+  "diffEditor.codeLens": true,
+  "makefile.configureOnOpen": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ]
+}
