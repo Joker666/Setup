@@ -1,0 +1,40 @@
+{
+  "window.commandCenter": true,
+  "window.autoDetectColorScheme": true,
+  "explorer.autoReveal": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.tree.indent": 15,
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "file:/**/*.csv": "jupyter-data-wrangler"
+  },
+  "editor.smoothScrolling": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.fontFamily": "MartianMono Nerd Font, monospace",
+  "editor.fontSize": 13,
+  "editor.fontWeight": "300",
+  "editor.lineHeight": 27,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "notebook.lineNumbers": "on",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.markup.fontSize": 12,
+  "notebook.output.fontSize": 12,
+  "notebook.output.lineHeight": 14
+}
