@@ -1,0 +1,28 @@
+{
+  "windsurf.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.preferredDarkColorTheme": "Solarized Dark",
+  "workbench.tree.indent": 15,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.fontFamily": "MartianMono Nerd Font, monospace",
+  "editor.fontSize": 13,
+  "editor.fontWeight": "300",
+  "editor.lineHeight": 27,
+  "editor.formatOnSave": true,
+  "editor.smoothScrolling": true,
+  "editor.scrollBeyondLastLine": false,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "notebook.lineNumbers": "on",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.markup.fontSize": 12,
+  "notebook.output.fontSize": 12,
+  "notebook.output.lineHeight": 14,
+  "explorer.confirmDelete": false
+}
