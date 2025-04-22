@@ -1,0 +1,25 @@
+{
+  "window.autoDetectColorScheme": true,
+  "workbench.list.smoothScrolling": true,
+  "workbench.preferredLightColorTheme": "Light",
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "MartianMono Nerd Font, JetBrains Mono, Menlo, Monaco, monospace",
+  "editor.fontSize": 13,
+  "editor.fontWeight": "300",
+  "editor.lineHeight": 27,
+  "editor.smoothScrolling": true,
+  "editor.formatOnSave": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.bracketPairColorization.enabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  },
+  "notebook.lineNumbers": "on",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.markup.fontSize": 12,
+  "notebook.output.fontSize": 12,
+  "notebook.output.lineHeight": 14
+}
