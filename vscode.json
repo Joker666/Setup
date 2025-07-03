@@ -35,7 +35,9 @@
   },
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "github.copilot.nextEditSuggestions.enabled": true,
-  "editor.rulers": [120],
+  "editor.rulers": [
+    120
+  ],
   "editor.codeLens": true,
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
@@ -85,7 +87,9 @@
     "workbench.preferredLightColorTheme",
     "lldb.library"
   ],
-  "settingsSync.ignoredExtensions": ["sourcegraph.cody-ai"],
+  "settingsSync.ignoredExtensions": [
+    "sourcegraph.cody-ai"
+  ],
   "go.formatTool": "gofumpt",
   "gopls": {
     "ui.semanticTokens": false,
@@ -94,7 +98,9 @@
   "go.useLanguageServer": true,
   "go.toolsManagement.autoUpdate": true,
   "go.lintTool": "golangci-lint",
-  "go.lintFlags": ["--fast"],
+  "go.lintFlags": [
+    "--fast"
+  ],
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[javascript][typescript][html][javascriptreact][typescriptreact][jsonc][astro][css]": {
@@ -131,7 +137,9 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "editor.rulers": [120],
+    "editor.rulers": [
+      120
+    ],
     "editor.semanticHighlighting.enabled": true
   },
   "[dart]": {
@@ -164,10 +172,11 @@
   "terminal.integrated.env.linux": {},
   "lldb.launch.expressions": "native",
   "cmake.configureOnOpen": true,
-  "diffEditor.codeLens": true,
-  "makefile.configureOnOpen": true,
   "cmake.pinnedCommands": [
     "workbench.action.tasks.configureTaskRunner",
     "workbench.action.tasks.runTask"
-  ]
+  ],
+  "diffEditor.codeLens": true,
+  "makefile.configureOnOpen": true,
+  "docker.extension.enableComposeLanguageServer": false
 }
