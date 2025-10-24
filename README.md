@@ -94,7 +94,7 @@ pnpm setup
 - [Stats](https://github.com/exelban/stats)
 - [Image Optim](https://imageoptim.com)
 - [Daisy Disk](https://daisydiskapp.com)
-- [LM Studio](https://lmstudio.ai/)
+- [LM Studio](https://lmstudio.ai)
 - [Pear Cleaner](https://itsalin.com/appInfo/?id=pearcleaner)
 - [Mos](https://mos.caldis.me)
 - [Quick Recorder](https://lihaoyun6.github.io/quickrecorder)
@@ -102,4 +102,4 @@ pnpm setup
 - [Self Control](https://selfcontrolapp.com)
 - [Wipr 2](https://apps.apple.com/us/app/wipr-2/id1662217862)
 - [Mouse Jiggler](https://apps.apple.com/us/app/mouse-jiggler-mouse-mover/id6740313656?mt=12)
-
+- [Cap](https://cap.so)
