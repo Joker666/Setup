@@ -1,0 +1,100 @@
+#!/usr/bin/env fish
+# update-all -- upgrade everything on this machine
+# Order: package managers first, then the tools they manage.
+# Pass --dry to show what would be upgraded without changing anything.
+
+argparse dry -- $argv; or exit 1
+
+set -g _failures
+
+function section
+    set_color -o cyan
+    echo
+    echo "==> $argv"
+    set_color normal
+end
+
+function run
+    set_color brblack
+    echo "\$ $argv"
+    set_color normal
+    command $argv
+    or begin
+        set_color red
+        echo "!! failed: $argv"
+        set_color normal
+        set -a _failures "$argv"
+    end
+end
+
+section Homebrew
+# brew update only refreshes metadata; needed for accurate results either way
+run brew update
+if set -q _flag_dry
+    run brew upgrade --dry-run
+    run brew upgrade --cask --greedy --dry-run
+else
+    run brew upgrade
+    run brew upgrade --cask --greedy
+end
+
+section "mise (runtimes: go, node, pnpm, python, ruby)"
+if set -q _flag_dry
+    run mise upgrade --dry-run
+else
+    run mise self-update -y
+    run mise upgrade
+end
+
+section Rust
+if set -q _flag_dry
+    run rustup check
+else
+    run rustup update
+end
+
+section "uv tools"
+if uv tool list 2>/dev/null | grep -q .
+    if set -q _flag_dry
+        echo "installed uv tools (no dry-run support; these would be upgraded):"
+        run uv tool list
+    else
+        run uv tool upgrade --all
+    end
+else
+    echo "no uv tools installed, skipping"
+end
+
+section "npm globals"
+if type -q npm
+    if set -q _flag_dry
+        # npm outdated exits 1 when updates exist; that's information, not failure
+        set_color brblack
+        echo "\$ npm outdated -g"
+        set_color normal
+        command npm outdated -g
+        or true
+    else
+        run npm update -g
+    end
+end
+
+# macOS system updates are intentionally not run here (they can require a
+# restart). Check manually with:  softwareupdate --list
+
+echo
+if set -q _failures[1]
+    set_color red
+    echo "Completed with failures:"
+    printf '  - %s\n' $_failures
+    set_color normal
+    exit 1
+else
+    set_color green
+    if set -q _flag_dry
+        echo "Dry run complete -- nothing was changed."
+    else
+        echo "Everything up to date."
+    end
+    set_color normal
+end

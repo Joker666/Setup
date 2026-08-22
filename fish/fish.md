@@ -1,13 +1,22 @@
-## Fish shell frameworks
+# Fish shell setup
 
-- [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
-- [fisher](https://github.com/jorgebucaran/fisher)
+No shell framework or plugin manager is needed anymore — `config.fish` in this
+directory is self-contained. Oh My Fish and fisher were previously used and
+have been dropped; everything they provided now comes from standalone tools:
 
-### Fish shell plugins
+- **z** (directory jumping) → [zoxide](https://github.com/ajeetdsouza/zoxide)
+  (`brew install zoxide`). Defines `z` and `zi` (interactive picker), and can
+  import an old z database: `zoxide import --merge z < ~/.local/share/z/data`
+- **fzf key bindings** → shipped with fzf itself, loaded via `fzf --fish | source`
+- **prompt** → [starship](https://starship.rs), installed via brew
 
-- [fzf](https://github.com/junegunn/fzf)
-- [z](https://github.com/jethrokuan/z)
-- [bass](https://github.com/edc/bass)
+If a bash script ever needs sourcing in fish, [bass](https://github.com/edc/bass)
+still exists, but it needs fisher — prefer porting the script instead.
+
+## Abbreviations vs aliases
+
+Git shortcuts (`gib`, `gic`, `gst`) are `abbr`s, not aliases: they expand to
+the full command at the prompt before running, so shell history stays readable.
 
 ## Functions
 

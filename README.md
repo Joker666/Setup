@@ -14,9 +14,16 @@ brew doctor
 
 ## Install fish shell
 
-- [Instructions on how to install Fish shell on Mac OS X, including Oh My Fish!](https://gist.github.com/martelogan/97cfc998ade51b6dcf55423bbd50917c)
+```bash
+brew install fish
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+```
 
-If the `ruby` installer was used to install Homebrew, `brew` needs to be added to fish path.
+No framework (Oh My Fish / fisher) is needed — see [fish/fish.md](fish/fish.md).
+Copy [fish/config.fish](fish/config.fish) to `~/.config/fish/config.fish`.
+
+If `brew` is not on fish's path yet:
 
 ```bash
 fish_add_path /opt/homebrew/bin
@@ -31,10 +38,12 @@ fish_add_path /opt/homebrew/bin
 
 - [mise](https://mise.jdx.dev/)
 
-> Use Homebrew to install Mise in MacOS.
-> Use CLI to install Mise in Linux.
+Use the standalone installer on both macOS and Linux (not Homebrew — this
+installs to `~/.local/bin/mise` and lets mise update itself with
+`mise self-update`, decoupled from brew's upgrade cycle):
 
 ```bash
+curl https://mise.run | sh
 mise doctor
 ```
 
@@ -59,11 +68,10 @@ Use `rustup` to install Rust.
 ## Node
 
 - [Use Mise to install node](https://mise.jdx.dev/lang/node.html)
-- [Use corepack to install pnpm](https://pnpm.io/installation#using-corepack)
+- Use Mise to install pnpm
 
 ```bash
-corepack prepare --activate
-pnpm setup
+mise use -g node@latest pnpm@latest
 ```
 
 ## Command line tools
@@ -81,6 +89,13 @@ pnpm setup
 - [walk](https://github.com/antonmedv/walk)
   - Usage: `lk`
 - [starship](https://github.com/starship/starship)
+- [zoxide](https://github.com/ajeetdsouza/zoxide)
+  - Usage: `z` / `zi`
+- [uv](https://github.com/astral-sh/uv)
+  - Install CLI tools with `uv tool install --python <version> <tool>` (pinning
+    a uv-managed Python keeps tools working when mise prunes old runtimes)
+- [cargo-cache](https://github.com/matthiaskrgr/cargo-cache)
+  - Used by `prune-all` to trim the cargo registry
 - [btop](https://github.com/aristocratos/btop)
 - [onefetch](https://github.com/o2sh/onefetch)
 - [fastfetch](https://github.com/fastfetch-cli/fastfetch)
@@ -103,3 +118,15 @@ pnpm setup
 - [Wipr 2](https://apps.apple.com/us/app/wipr-2/id1662217862)
 - [Mouse Jiggler](https://apps.apple.com/us/app/mouse-jiggler-mouse-mover/id6740313656?mt=12)
 - [Cap](https://cap.so)
+
+# Maintenance
+
+Two fish scripts in [scripts/](scripts/) keep the machine current. Install them once:
+
+```bash
+cp scripts/update-all scripts/prune-all ~/.local/bin/
+chmod +x ~/.local/bin/update-all ~/.local/bin/prune-all
+```
+
+- `update-all` — upgrades brew (formulae + greedy casks), mise + its runtimes, rust, uv tools, and npm globals. `update-all --dry` previews without changing anything.
+- `prune-all` — clears caches and leftovers (brew, mise, uv, pnpm, npm, go, docker, cargo) and reports disk freed. `prune-all --deep` also wipes rebuildable caches entirely.

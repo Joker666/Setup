@@ -1,0 +1,95 @@
+#!/usr/bin/env fish
+# prune-all -- clear caches and remove leftovers
+# Default is the safe tier: unused/dangling/stale things only.
+# Pass --deep to also wipe rebuildable caches entirely (uv, go, npm).
+
+argparse deep -- $argv; or exit 1
+
+set -g _failures
+set -l before (df -k / | awk 'NR==2 {print $4}')
+
+function section
+    set_color -o cyan
+    echo
+    echo "==> $argv"
+    set_color normal
+end
+
+function run
+    set_color brblack
+    echo "\$ $argv"
+    set_color normal
+    command $argv
+    or begin
+        set_color red
+        echo "!! failed: $argv"
+        set_color normal
+        set -a _failures "$argv"
+    end
+end
+
+section Homebrew
+run brew cleanup --prune=all
+run brew autoremove
+
+section mise
+run mise prune -y
+run mise cache clear
+
+section uv
+if set -q _flag_deep
+    run uv cache clean
+else
+    run uv cache prune
+end
+
+section pnpm
+run pnpm store prune
+
+section npm
+if type -q npm
+    if set -q _flag_deep
+        run npm cache clean --force
+    else
+        run npm cache verify
+    end
+end
+
+section Go
+if type -q go
+    run go clean -cache -testcache
+    # module cache is kept (expensive to re-download); wipe with: go clean -modcache
+end
+
+section Docker
+if docker info >/dev/null 2>&1
+    # dangling images + build cache only; containers and volumes are untouched.
+    # For a full sweep run manually:  docker system prune -a
+    run docker image prune -f
+    run docker builder prune -f
+else
+    echo "docker not running, skipping"
+end
+
+section Cargo
+if type -q cargo-cache
+    run cargo cache --autoclean
+else
+    echo "cargo-cache not installed, skipping (brew install cargo-cache)"
+end
+
+set -l after (df -k / | awk 'NR==2 {print $4}')
+set -l freed (math "($after - $before) / 1024")
+
+echo
+if set -q _failures[1]
+    set_color red
+    echo "Completed with failures:"
+    printf '  - %s\n' $_failures
+    set_color normal
+    exit 1
+else
+    set_color green
+    echo "Done. Freed ~$freed MB."
+    set_color normal
+end
