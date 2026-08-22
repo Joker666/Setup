@@ -1,13 +1,17 @@
-## Fish shell frameworks
+# Fish shell setup
 
-- [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
-- [fisher](https://github.com/jorgebucaran/fisher)
+No shell framework or plugin manager is needed — `config.fish` in this
+directory is self-contained. Everything comes from standalone tools:
 
-### Fish shell plugins
+- **directory jumping** → [zoxide](https://github.com/ajeetdsouza/zoxide)
+  (`brew install zoxide`). Defines `z` and `zi` (interactive picker)
+- **fzf key bindings** → shipped with fzf itself, loaded via `fzf --fish | source`
+- **prompt** → [starship](https://starship.rs), installed via brew
 
-- [fzf](https://github.com/junegunn/fzf)
-- [z](https://github.com/jethrokuan/z)
-- [bass](https://github.com/edc/bass)
+## Abbreviations vs aliases
+
+Git shortcuts (`gib`, `gic`, `gst`) are `abbr`s, not aliases: they expand to
+the full command at the prompt before running, so shell history stays readable.
 
 ## Functions
 
