@@ -55,6 +55,17 @@ if type -q npm
     end
 end
 
+section pip
+if type -q pip
+    if set -q _flag_deep
+        # pip only offers a full wipe, no unused-only prune; the wheel cache
+        # speeds up reinstalls, so it's only cleared in deep mode
+        run pip cache purge
+    else
+        echo "wheel cache kept (use --deep to purge)"
+    end
+end
+
 section Go
 if type -q go
     run go clean -cache -testcache

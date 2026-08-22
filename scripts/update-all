@@ -79,6 +79,22 @@ if type -q npm
     end
 end
 
+section "pip globals"
+if type -q pip
+    if set -q _flag_dry
+        run pip list --outdated
+    else
+        # one pip install with every name lets the resolver reconcile the
+        # whole set, instead of upgrading each package in isolation
+        set outdated (pip list --outdated --format=json | python -c "import json, sys; print('\n'.join(pkg['name'] for pkg in json.load(sys.stdin)))")
+        if set -q outdated[1]
+            run pip install -U $outdated
+        else
+            echo "all pip globals up to date"
+        end
+    end
+end
+
 # macOS system updates are intentionally not run here (they can require a
 # restart). Check manually with:  softwareupdate --list
 
