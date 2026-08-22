@@ -69,7 +69,11 @@ end
 section Go
 if type -q go
     run go clean -cache -testcache
-    # module cache is kept (expensive to re-download); wipe with: go clean -modcache
+    if set -q _flag_deep
+        run go clean -modcache
+    else
+        echo "module cache kept (use --deep to wipe)"
+    end
 end
 
 section Docker

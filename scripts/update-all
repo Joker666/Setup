@@ -79,6 +79,29 @@ if type -q npm
     end
 end
 
+section "go binaries"
+if type -q go
+    for bin in (go env GOPATH)/bin/*
+        # each go binary embeds the package, module, and version it was built from
+        set -l meta (go version -m $bin 2>/dev/null | awk '$1=="path"{p=$2} $1=="mod"{m=$2;v=$3} END{if (p) print p, m, v}' | string split ' ')
+        set -q meta[3]; or continue
+        if test "$meta[3]" = "(devel)"
+            echo (basename $bin)": built from local source, skipping"
+            continue
+        end
+        if set -q _flag_dry
+            set -l latest (go list -m -f '{{.Version}}' "$meta[2]@latest" 2>/dev/null; or echo "?")
+            if test "$latest" = "$meta[3]"
+                echo (basename $bin)": $meta[3] (up to date)"
+            else
+                echo (basename $bin)": $meta[3] -> $latest"
+            end
+        else
+            run go install "$meta[1]@latest"
+        end
+    end
+end
+
 section "pip globals"
 if type -q pip
     if set -q _flag_dry
