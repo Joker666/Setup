@@ -1,17 +1,12 @@
 # Fish shell setup
 
-No shell framework or plugin manager is needed anymore — `config.fish` in this
-directory is self-contained. Oh My Fish and fisher were previously used and
-have been dropped; everything they provided now comes from standalone tools:
+No shell framework or plugin manager is needed — `config.fish` in this
+directory is self-contained. Everything comes from standalone tools:
 
-- **z** (directory jumping) → [zoxide](https://github.com/ajeetdsouza/zoxide)
-  (`brew install zoxide`). Defines `z` and `zi` (interactive picker), and can
-  import an old z database: `zoxide import --merge z < ~/.local/share/z/data`
+- **directory jumping** → [zoxide](https://github.com/ajeetdsouza/zoxide)
+  (`brew install zoxide`). Defines `z` and `zi` (interactive picker)
 - **fzf key bindings** → shipped with fzf itself, loaded via `fzf --fish | source`
 - **prompt** → [starship](https://starship.rs), installed via brew
-
-If a bash script ever needs sourcing in fish, [bass](https://github.com/edc/bass)
-still exists, but it needs fisher — prefer porting the script instead.
 
 ## Abbreviations vs aliases
 

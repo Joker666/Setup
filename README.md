@@ -20,7 +20,7 @@ echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
 chsh -s /opt/homebrew/bin/fish
 ```
 
-No framework (Oh My Fish / fisher) is needed — see [fish/fish.md](fish/fish.md).
+No shell framework or plugin manager is needed — see [fish/fish.md](fish/fish.md).
 Copy [fish/config.fish](fish/config.fish) to `~/.config/fish/config.fish`.
 
 If `brew` is not on fish's path yet:
