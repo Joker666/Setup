@@ -128,5 +128,5 @@ cp scripts/update-all scripts/prune-all ~/.local/bin/
 chmod +x ~/.local/bin/update-all ~/.local/bin/prune-all
 ```
 
-- `update-all` — upgrades brew (formulae + greedy casks), mise + its runtimes, rust, uv tools, go binaries, and npm + pip globals. `update-all --dry` previews without changing anything.
+- `update-all` — upgrades brew (formulae + greedy casks), mise + its runtimes, rust, uv tools, go binaries, and npm + pnpm + pip globals. `update-all --dry` previews without changing anything.
 - `prune-all` — clears caches and leftovers (brew, mise, uv, pnpm, npm, pip, go, docker, cargo) and reports disk freed. `prune-all --deep` also wipes rebuildable caches entirely.
