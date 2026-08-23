@@ -79,6 +79,28 @@ if type -q npm
     end
 end
 
+section "pnpm globals"
+if type -q pnpm
+    # pnpm v11 gives each global package its own workspace project, which
+    # `pnpm update -g` and `pnpm outdated -g` silently fail to traverse, and
+    # `add -g pkg@latest` can resolve the tag from stale cached metadata --
+    # so ask the registry for the live version and install it explicitly.
+    # @pnpm/exe is skipped: that's pnpm itself, file-linked from mise.
+    for line in (pnpm ls -g --depth 0 --json 2>/dev/null | python -c "import json, sys; [print(name, dep['version']) for proj in json.load(sys.stdin) for name, dep in proj.get('dependencies', {}).items() if name != '@pnpm/exe']")
+        set -l pkg (string split ' ' $line)
+        set -l latest (pnpm view "$pkg[1]" version 2>/dev/null)
+        if not set -q latest[1]
+            echo "$pkg[1]: could not resolve latest version, skipping"
+        else if test "$latest" = "$pkg[2]"
+            echo "$pkg[1]: $pkg[2] (up to date)"
+        else if set -q _flag_dry
+            echo "$pkg[1]: $pkg[2] -> $latest"
+        else
+            run pnpm add -g "$pkg[1]@$latest"
+        end
+    end
+end
+
 section "go binaries"
 if type -q go
     for bin in (go env GOPATH)/bin/*
