@@ -68,10 +68,10 @@ Use `rustup` to install Rust.
 ## Node
 
 - [Use Mise to install node](https://mise.jdx.dev/lang/node.html)
-- Use Mise to install pnpm
+- Use Mise to install pnpm. Add pnpm before node so its `pnpm` binary wins over the copy bundled with node.
 
 ```bash
-mise use -g node@latest pnpm@latest
+mise use -g pnpm@latest node@latest
 ```
 
 ## Command line tools

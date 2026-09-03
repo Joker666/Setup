@@ -83,10 +83,13 @@ section "pnpm globals"
 if type -q pnpm
     # pnpm v11 gives each global package its own workspace project, which
     # `pnpm update -g` and `pnpm outdated -g` silently fail to traverse, and
-    # `add -g pkg@latest` can resolve the tag from stale cached metadata --
-    # so ask the registry for the live version and install it explicitly.
-    # @pnpm/exe is skipped: that's pnpm itself, file-linked from mise.
-    for line in (pnpm ls -g --depth 0 --json 2>/dev/null | python -c "import json, sys; [print(name, dep['version']) for proj in json.load(sys.stdin) for name, dep in proj.get('dependencies', {}).items() if name != '@pnpm/exe']")
+    # `add -g pkg@latest` can resolve the tag from stale cached metadata.
+    # So ask the registry for the live version and install it explicitly.
+    set -l globals (pnpm ls -g --depth 0 --json 2>/dev/null | python -c "import json, sys; [print(name, dep['version']) for proj in json.load(sys.stdin) for name, dep in proj.get('dependencies', {}).items()]")
+    if not set -q globals[1]
+        echo "no global packages installed, skipping"
+    end
+    for line in $globals
         set -l pkg (string split ' ' $line)
         set -l latest (pnpm view "$pkg[1]" version 2>/dev/null)
         if not set -q latest[1]
