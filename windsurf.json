@@ -1,9 +1,9 @@
 {
-  "windsurf.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items",
   "window.autoDetectColorScheme": true,
   "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.preferredDarkColorTheme": "Solarized Dark",
   "workbench.tree.indent": 15,
+  "explorer.confirmDelete": false,
   "editor.bracketPairColorization.enabled": false,
   "editor.fontFamily": "MartianMono Nerd Font, monospace",
   "editor.fontSize": 13,
@@ -23,6 +23,5 @@
   "notebook.formatOnSave.enabled": true,
   "notebook.markup.fontSize": 12,
   "notebook.output.fontSize": 12,
-  "notebook.output.lineHeight": 14,
-  "explorer.confirmDelete": false
+  "notebook.output.lineHeight": 14
 }
