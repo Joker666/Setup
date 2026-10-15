@@ -1,0 +1,28 @@
+#!/bin/sh
+# install -- symlink the maintenance scripts into ~/.local/bin
+# Symlinks keep the installed scripts in sync with this repo. A git pull is all
+# an update needs. Safe to run again.
+
+set -e
+
+repo=$(cd "$(dirname "$0")" && pwd)
+bin="$HOME/.local/bin"
+mkdir -p "$bin"
+
+for src in "$repo"/scripts/*; do
+    name=$(basename "$src")
+    dest="$bin/$name"
+    chmod +x "$src"
+    # Keep a backup of a real file that differs from the repo copy.
+    if [ -f "$dest" ] && [ ! -L "$dest" ] && ! cmp -s "$src" "$dest"; then
+        mv "$dest" "$dest.bak"
+        echo "backed up $dest to $dest.bak"
+    fi
+    ln -sfn "$src" "$dest"
+    echo "linked $dest -> $src"
+done
+
+case ":$PATH:" in
+    *":$bin:"*) ;;
+    *) echo "note: add $bin to PATH (fish: fish_add_path $bin)" ;;
+esac

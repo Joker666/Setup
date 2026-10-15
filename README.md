@@ -122,9 +122,11 @@ mise use -g pnpm@latest node@latest
 Two fish scripts in [scripts/](scripts/) keep the machine current. Install them once:
 
 ```bash
-cp scripts/update-all scripts/prune-all ~/.local/bin/
-chmod +x ~/.local/bin/update-all ~/.local/bin/prune-all
+git clone https://github.com/Joker666/Setup.git ~/Projects/Misc/Setup
+~/Projects/Misc/Setup/install
 ```
+
+`install` symlinks each script into `~/.local/bin`, so a `git pull` in the repo updates the installed scripts.
 
 - `update-all` — upgrades brew (formulae + greedy casks), mise + its runtimes, rust, uv tools, go binaries, and npm + pnpm + pip globals. `update-all --dry` previews without changing anything.
 - `prune-all` — clears caches and leftovers (brew, mise, uv, pnpm, npm, pip, go, docker, cargo) and reports disk freed. `prune-all --deep` also wipes rebuildable caches entirely.
