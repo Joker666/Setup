@@ -6,8 +6,6 @@ Setup tools for a new machine.
 
 - [Homebrew](https://brew.sh/)
 
-> Use the .pkg installer for Mac OS X
-
 ```bash
 brew doctor
 ```
