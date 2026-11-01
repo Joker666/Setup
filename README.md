@@ -67,9 +67,11 @@ Use `rustup` to install Rust.
 
 - [Use Mise to install node](https://mise.jdx.dev/lang/node.html)
 - Use Mise to install pnpm. Add pnpm before node so its `pnpm` binary wins over the copy bundled with node.
+- Disable the Corepack shims that come with node. Let mise update pnpm, and do not run `pnpm self-update`.
 
 ```bash
 mise use -g pnpm@latest node@latest
+corepack disable
 ```
 
 ## Command line tools
