@@ -19,7 +19,7 @@ chsh -s /opt/homebrew/bin/fish
 ```
 
 No shell framework or plugin manager is needed — see [fish/fish.md](fish/fish.md).
-Copy [fish/config.fish](fish/config.fish) to `~/.config/fish/config.fish`.
+Copy [fish/config.fish](fish/config.fish) to `~/.config/fish/config.fish`. It is a starting point for machine-specific settings, so `install` does not link it. `install` links the files in `fish/conf.d` and `fish/functions` (see [Maintenance](#maintenance)).
 
 If `brew` is not on fish's path yet:
 
@@ -88,7 +88,6 @@ corepack disable
   - Usage: `br -S`
 - [walk](https://github.com/antonmedv/walk)
   - Usage: `lk`
-- [starship](https://github.com/starship/starship)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
   - Usage: `z` / `zi`
 - [uv](https://github.com/astral-sh/uv)
@@ -128,7 +127,7 @@ git clone https://github.com/Joker666/Setup.git ~/Projects/Misc/Setup
 ~/Projects/Misc/Setup/install
 ```
 
-`install` symlinks each script into `~/.local/bin`, so a `git pull` in the repo updates the installed scripts.
+`install` symlinks each script into `~/.local/bin`, and each file in `fish/conf.d` and `fish/functions` into `~/.config/fish`. Thus a `git pull` in the repo updates the installed files. Other files in those fish folders are not changed.
 
 - `update-all` — upgrades brew (formulae + greedy casks), mise + its runtimes, rust, uv tools, go binaries, and npm + pnpm + pip globals. `update-all --dry` previews without changing anything.
 - `prune-all` — clears caches and leftovers (brew, mise, uv, pnpm, npm, pip, go, docker, cargo) and reports disk freed. `prune-all --deep` also wipes rebuildable caches entirely.

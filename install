@@ -1,25 +1,40 @@
 #!/bin/sh
-# install -- symlink the maintenance scripts into ~/.local/bin
-# Symlinks keep the installed scripts in sync with this repo. A git pull is all
+# install -- symlink the maintenance scripts and fish files into place
+# Symlinks keep the installed files in sync with this repo. A git pull is all
 # an update needs. Safe to run again.
+#
+# config.fish is not linked because it holds machine-specific settings.
+# Copy it by hand on a new machine.
 
 set -e
 
 repo=$(cd "$(dirname "$0")" && pwd)
 bin="$HOME/.local/bin"
-mkdir -p "$bin"
+fish="$HOME/.config/fish"
 
-for src in "$repo"/scripts/*; do
-    name=$(basename "$src")
-    dest="$bin/$name"
-    chmod +x "$src"
-    # Keep a backup of a real file that differs from the repo copy.
-    if [ -f "$dest" ] && [ ! -L "$dest" ] && ! cmp -s "$src" "$dest"; then
-        mv "$dest" "$dest.bak"
-        echo "backed up $dest to $dest.bak"
+# link SRC DEST: symlink SRC to DEST, and back up a real file at DEST that differs.
+link() {
+    if [ -f "$2" ] && [ ! -L "$2" ] && ! cmp -s "$1" "$2"; then
+        mv "$2" "$2.bak"
+        echo "backed up $2 to $2.bak"
     fi
-    ln -sfn "$src" "$dest"
-    echo "linked $dest -> $src"
+    ln -sfn "$1" "$2"
+    echo "linked $2 -> $1"
+}
+
+mkdir -p "$bin"
+for src in "$repo"/scripts/*; do
+    chmod +x "$src"
+    link "$src" "$bin/$(basename "$src")"
+done
+
+# Link each fish file on its own, so local files in the same folders stay.
+for dir in conf.d functions; do
+    mkdir -p "$fish/$dir"
+    for src in "$repo/fish/$dir"/*.fish; do
+        [ -e "$src" ] || continue
+        link "$src" "$fish/$dir/$(basename "$src")"
+    done
 done
 
 case ":$PATH:" in

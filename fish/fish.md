@@ -6,7 +6,6 @@ directory is self-contained. Everything comes from standalone tools:
 - **directory jumping** → [zoxide](https://github.com/ajeetdsouza/zoxide)
   (`brew install zoxide`). Defines `z` and `zi` (interactive picker)
 - **fzf key bindings** → shipped with fzf itself, loaded via `fzf --fish | source`
-- **prompt** → [starship](https://starship.rs), installed via brew
 
 ## Abbreviations vs aliases
 

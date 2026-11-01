@@ -11,7 +11,6 @@ if status is-interactive
     # mise: activates runtimes (go, node, pnpm, python, ruby)
     type -q mise; and mise activate fish | source
 
-    type -q starship; and starship init fish | source
     type -q zoxide; and zoxide init fish | source # defines z and zi
     type -q fzf; and fzf --fish | source # fzf key bindings
 
