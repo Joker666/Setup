@@ -81,26 +81,17 @@ end
 
 section "pnpm globals"
 if type -q pnpm
-    # pnpm v11 gives each global package its own workspace project, which
-    # `pnpm update -g` and `pnpm outdated -g` silently fail to traverse, and
-    # `add -g pkg@latest` can resolve the tag from stale cached metadata.
-    # So ask the registry for the live version and install it explicitly.
-    set -l globals (pnpm ls -g --depth 0 --json 2>/dev/null | python -c "import json, sys; [print(name, dep['version']) for proj in json.load(sys.stdin) for name, dep in proj.get('dependencies', {}).items()]")
-    if not set -q globals[1]
-        echo "no global packages installed, skipping"
-    end
-    for line in $globals
-        set -l pkg (string split ' ' $line)
-        set -l latest (pnpm view "$pkg[1]" version 2>/dev/null)
-        if not set -q latest[1]
-            echo "$pkg[1]: could not resolve latest version, skipping"
-        else if test "$latest" = "$pkg[2]"
-            echo "$pkg[1]: $pkg[2] (up to date)"
-        else if set -q _flag_dry
-            echo "$pkg[1]: $pkg[2] -> $latest"
-        else
-            run pnpm add -g "$pkg[1]@$latest"
-        end
+    # Needs pnpm 12 or newer. pnpm 11 skipped global packages in both commands.
+    if set -q _flag_dry
+        # pnpm outdated exits 1 when updates exist. That is information, not failure.
+        set_color brblack
+        echo "\$ pnpm outdated -g"
+        set_color normal
+        command pnpm outdated -g
+        or true
+    else
+        # Global packages are pinned to exact versions, so plain update does nothing.
+        run pnpm update -g --latest
     end
 end
 
